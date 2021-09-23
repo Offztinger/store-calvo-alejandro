@@ -1,0 +1,11 @@
+div.Results {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin: 42px 132px 132px 42px;
+}
+
+div.resultsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
