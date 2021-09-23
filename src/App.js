@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Filters from "./components/Filters/Filters";
 import Results from "./components/Results/Results";
-
+import useUser from "./hooks/useUser";
+import useProducts from "./hooks/useProducts";
 export default function App() {
   const [filterButtons, setFilterButtons] = useState([
     {
@@ -13,15 +14,21 @@ export default function App() {
       state3: false,
     },
   ]);
+  const { fetchUser, user } = useUser();
+  const { fetchProducts, products } = useProducts();
+  useEffect(() => {
+    fetchProducts();
+    fetchUser();
+  }, [fetchUser, fetchProducts]);
   return (
     <div className="App">
-      <Navbar />
+      <Navbar name={user.name} points={user.points} />
       <Header />
       <Filters
         filterButtons={filterButtons}
         setFilterButtons={setFilterButtons}
       />
-      <Results />
+      <Results points={user.points} products={products} />
     </div>
   );
 }

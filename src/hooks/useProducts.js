@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import token from "../../constants/token";
-import { ProductsContext } from "../../context/ProductsContext";
+import token from "../constants/token";
+import { ProductsContext } from "../context/ProductsContext";
 
 export default function useProducts() {
   const { products, setProducts } = useContext(ProductsContext);

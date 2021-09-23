@@ -22,6 +22,28 @@ div.productImage {
   width: 100%;
 }
 
+div.notAllow {
+  display: flex;
+  width: 142px;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  background: #616161;
+  mix-blend-mode: normal;
+  opacity: 0.8;
+  border-radius: 100px;
+}
+
+p.textNotAllow {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: right;
+  letter-spacing: -0.0329412px;
+  color: #ffffff;
+}
+
 div.buyImageBlue {
   display: flex;
   justify-content: flex-end;

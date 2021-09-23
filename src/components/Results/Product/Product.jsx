@@ -1,15 +1,27 @@
+import { useState } from "react"
 import "./Product.css"
 import buyBlue from "../../../assets/icons/buy-blue.svg"
 import buyWhite from "../../../assets/icons/buy-white.svg"
 import coin from "../../../assets/icons/coin.svg"
 
-export default function Product({ key, img, category, productName, price }) {
+
+export default function Product({ img, category, productName, price, points }) {
+    const [allow, setAllow] = useState(true);
+    const [need, setNeed] = useState(0);
+    if (price > points) {
+        setAllow(false)
+        setNeed(price - points)
+    }
+
     return (
-        <div key={key} className="Product">
+        <div className="Product">
             <div className="productContainer">
                 <div className="productImage">
                     <div className="buyImageBlue">
-                        <img className="buyBlue" src={buyBlue} alt="buyImage" />
+                        {!allow ? (<img className="buyBlue" src={buyBlue} alt="buyImage" />) : (<div className="notAllow">
+                            <p className="textNotAllow">You need {need}</p>
+                            <img className="coin" src={coin} alt="coin" />
+                        </div>)}
                     </div>
                     <img className="productImage" src={img} alt="productImage" />
                 </div>
