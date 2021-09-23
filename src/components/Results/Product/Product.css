@@ -1,8 +1,11 @@
 div.Product {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 276px;
   width: 276px;
+  margin: 24px;
 }
 
 div.productContainer {
@@ -19,15 +22,14 @@ div.productImage {
   width: 100%;
 }
 
-div.buyImage {
+div.buyImageBlue {
   display: flex;
   justify-content: flex-end;
   width: 252px;
 }
 
 img.productImage {
-  width: 252px;
-  height: 182px;
+  width: 230px;
 }
 
 div.productInfo {
@@ -49,6 +51,88 @@ p.productName {
   font-weight: normal;
   font-size: 18px;
   line-height: 23px;
+  letter-spacing: -0.0423529px;
+  color: #616161;
+}
+
+div.hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 212, 250, 0.86) 0%,
+    rgba(37, 187, 241, 0.86) 100%
+  );
+  transform: translateX(-100%);
+}
+
+div.buyImageWhite {
+  display: flex;
+  justify-content: flex-end;
+  height: 30%;
+  width: 100%;
+}
+
+img.buyWhite {
+  height: 48px;
+  width: 48px;
+}
+
+div.buyContainer {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+}
+
+div.coinContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+p.textCoin {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 45px;
+  text-align: center;
+  letter-spacing: -0.0847059px;
+  color: #ffffff;
+  margin-right: 9px;
+}
+
+div.productContainer:hover div.hidden,
+div.productContainer:active div.hidden {
+  transform: translateX(0%);
+}
+
+div.productContainer:hover div.productImage img.buyBlue,
+div.productContainer:active div.productImage img.buyBlue {
+  transition: all 1s;
+  transform: translateX(200%);
+}
+
+button.redeemButton {
+  width: 228px;
+  height: 42px;
+  background: #ffffff;
+  border-radius: 20.5px;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
   letter-spacing: -0.0423529px;
   color: #616161;
 }

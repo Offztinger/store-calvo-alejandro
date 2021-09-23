@@ -12,7 +12,11 @@ export default function Results() {
         <div className="Results">
             <div className="resultsContainer">
                 {products.map((element) => {
-                    return (<Product key={element._id} img={element.img.url} category={element.category} productName={element.name} />);
+                    return (
+                        <div className="item">
+                            <Product key={element._id} img={element.img.url} category={element.category} productName={element.name} price={element.cost} />
+                        </div>
+                    );
                 })}
             </div>
         </div>
