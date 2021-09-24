@@ -18,8 +18,9 @@ export default function App() {
   const { fetchProducts, products } = useProducts();
   useEffect(() => {
     fetchProducts();
+    console.log('hola')
     fetchUser();
-  }, [fetchUser, fetchProducts]);
+  }, []);
   return (
     <div className="App">
       <Navbar name={user.name} points={user.points} />
