@@ -1,0 +1,40 @@
+div.History {
+  display: flex;
+  flex-direction: column;
+    margin-bottom: 4rem;
+  width: 100vw;
+}
+
+div.historyContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+div.user {
+  display: flex;
+  width: 230px;
+  height: 230px;
+}
+
+div.userInformation {
+  margin-left: 30px;
+}
+
+p.userInformationText {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 48px;
+  letter-spacing: -0.15px;
+  color: #000000;
+}
+
+div.historyInformation {
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  width: 20vw;
+  overflow: auto;
+}

@@ -15,7 +15,21 @@ export default function useUser() {
       setUser(res);
     } catch (error) {
       console.error(error);
-    } 
+    }
   }
-  return { fetchUser, user };
+  const restCoints = (points) => {
+    setUser({
+      ...user,
+      points,
+    });
+  };
+
+  const boostCoins = (points) => {
+    points = points + user.points
+    setUser({
+      ...user,
+      points,
+    });
+  };
+  return { fetchUser, user, restCoints, boostCoins };
 }

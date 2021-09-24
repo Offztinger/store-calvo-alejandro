@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
 import "./App.css";
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import useUser from "./hooks/useUser";
+import useProducts from "./hooks/useProducts";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Filters from "./components/Filters/Filters";
 import Results from "./components/Results/Results";
-import useUser from "./hooks/useUser";
-import useProducts from "./hooks/useProducts";
+import Coins from "./components/Coins/Coins";
+import History from "./components/History/History";
+
 export default function App() {
   const [filterButtons, setFilterButtons] = useState([
     {
@@ -22,13 +26,25 @@ export default function App() {
   }, []);
   return (
     <div className="App">
-      <Navbar name={user.name} points={user.points} />
-      <Header />
-      <Filters
-        filterButtons={filterButtons}
-        setFilterButtons={setFilterButtons}
-      />
-      <Results points={user.points} products={products} />
+      <Router>
+        <Navbar name={user.name} points={user.points} />
+        <Header />
+        <Switch>
+          <Route path="/user">
+            <History />
+          </Route>
+          <Route path="/coins">
+            <Coins />
+          </Route>
+          <Route path="/" exact>
+            <Filters
+              filterButtons={filterButtons}
+              setFilterButtons={setFilterButtons}
+            />
+            <Results points={user.points} products={products} />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

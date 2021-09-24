@@ -2,11 +2,32 @@ import "./Product.css"
 import buyBlue from "../../../assets/icons/buy-blue.svg"
 import buyWhite from "../../../assets/icons/buy-white.svg"
 import coin from "../../../assets/icons/coin.svg"
+import token from "../../../constants/token"
+import useUser from '../../../hooks/useUser'
 
 
-export default function Product({ img, category, productName, price, points }) {
+export default function Product({ id, img, category, productName, price, points }) {
 
+    const { restCoints } = useUser();
 
+    const handleClick = () => {
+        if (price < points) {
+            fetch("https://coding-challenge-api.aerolab.co/redeem", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify({
+                    productId: id,
+                })
+            })
+            restCoints(points - price)
+            alert("¡Compra exitosa!")
+        } else {
+            alert("Uh oh, ha ocurrido un error...")
+        }
+    }
 
     return (
         <div className="Product">
@@ -34,7 +55,7 @@ export default function Product({ img, category, productName, price, points }) {
                             <p className="textCoin">{price}</p>
                             <img className="coin" src={coin} alt="coin" />
                         </div>
-                        {(price < points) ? <button onClick={} className="redeemButton">Redeem now</button> : (<div className="notAllow">
+                        {(price < points) ? <button onClick={handleClick} className="redeemButton">Redeem now</button> : (<div className="notAllow">
                             <p className="textNotAllow">Can't Purchase</p>
                         </div>)}
 

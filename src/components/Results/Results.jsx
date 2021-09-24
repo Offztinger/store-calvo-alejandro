@@ -8,7 +8,7 @@ export default function Results({ points, products }) {
                 {products.map((element) => {
                     return (
                         <div className="item" key={element._id}>
-                            <Product img={element.img.url} category={element.category} productName={element.name} price={element.cost} points={points} />
+                            <Product id={element._id} img={element.img.url} category={element.category} productName={element.name} price={element.cost} points={points} />
                         </div>
                     );
                 })}

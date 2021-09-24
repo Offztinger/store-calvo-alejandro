@@ -17,5 +17,5 @@ export default function useHistory() {
       console.error(error);
     }
   }
-  return { fetchHistory, user };
+  return { fetchHistory, history };
 }

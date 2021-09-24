@@ -1,0 +1,42 @@
+div.Coins {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+div.coinsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p.textCoinsPrincipal {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 48px;
+  letter-spacing: -0.15px;
+  color: #a3a3a3;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+button.coinButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 228px;
+  height: 42px;
+  background: #ededed;
+  border-radius: 20.5px;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: -0.0423529px;
+  color: #a3a3a3;
+  margin-bottom: 24px;
+}
