@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/store-calvo-alejandro/static/css/main.7f4aa99d.chunk.css",
-    "main.js": "/store-calvo-alejandro/static/js/main.8615fe3d.chunk.js",
-    "main.js.map": "/store-calvo-alejandro/static/js/main.8615fe3d.chunk.js.map",
+    "main.js": "/store-calvo-alejandro/static/js/main.59de24ab.chunk.js",
+    "main.js.map": "/store-calvo-alejandro/static/js/main.59de24ab.chunk.js.map",
     "runtime-main.js": "/store-calvo-alejandro/static/js/runtime-main.24626a3b.js",
     "runtime-main.js.map": "/store-calvo-alejandro/static/js/runtime-main.24626a3b.js.map",
     "static/js/2.7ffa44c4.chunk.js": "/store-calvo-alejandro/static/js/2.7ffa44c4.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.24626a3b.js",
     "static/js/2.7ffa44c4.chunk.js",
     "static/css/main.7f4aa99d.chunk.css",
-    "static/js/main.8615fe3d.chunk.js"
+    "static/js/main.59de24ab.chunk.js"
   ]
 }
