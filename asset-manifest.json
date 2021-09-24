@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/store-calvo-alejandro/static/css/main.7f4aa99d.chunk.css",
+    "main.js": "/store-calvo-alejandro/static/js/main.8615fe3d.chunk.js",
+    "main.js.map": "/store-calvo-alejandro/static/js/main.8615fe3d.chunk.js.map",
+    "runtime-main.js": "/store-calvo-alejandro/static/js/runtime-main.24626a3b.js",
+    "runtime-main.js.map": "/store-calvo-alejandro/static/js/runtime-main.24626a3b.js.map",
+    "static/js/2.7ffa44c4.chunk.js": "/store-calvo-alejandro/static/js/2.7ffa44c4.chunk.js",
+    "static/js/2.7ffa44c4.chunk.js.map": "/store-calvo-alejandro/static/js/2.7ffa44c4.chunk.js.map",
+    "index.html": "/store-calvo-alejandro/index.html",
+    "static/css/main.7f4aa99d.chunk.css.map": "/store-calvo-alejandro/static/css/main.7f4aa99d.chunk.css.map",
+    "static/js/2.7ffa44c4.chunk.js.LICENSE.txt": "/store-calvo-alejandro/static/js/2.7ffa44c4.chunk.js.LICENSE.txt",
+    "static/media/aerolab-logo.40b78ac9.svg": "/store-calvo-alejandro/static/media/aerolab-logo.40b78ac9.svg",
+    "static/media/buy-blue.13783e2a.svg": "/store-calvo-alejandro/static/media/buy-blue.13783e2a.svg",
+    "static/media/buy-white.3eddcc1e.svg": "/store-calvo-alejandro/static/media/buy-white.3eddcc1e.svg",
+    "static/media/coin.1fc21bda.svg": "/store-calvo-alejandro/static/media/coin.1fc21bda.svg",
+    "static/media/Header.css": "/store-calvo-alejandro/static/media/header-x1.b6f067c6.png",
+    "static/media/user.4a000e6c.svg": "/store-calvo-alejandro/static/media/user.4a000e6c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.24626a3b.js",
+    "static/js/2.7ffa44c4.chunk.js",
+    "static/css/main.7f4aa99d.chunk.css",
+    "static/js/main.8615fe3d.chunk.js"
+  ]
+}
