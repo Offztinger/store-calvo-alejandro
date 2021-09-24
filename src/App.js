@@ -18,7 +18,6 @@ export default function App() {
   const { fetchProducts, products } = useProducts();
   useEffect(() => {
     fetchProducts();
-    console.log('hola')
     fetchUser();
   }, []);
   return (
