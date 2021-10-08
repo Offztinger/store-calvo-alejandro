@@ -7,14 +7,14 @@ export default function Navbar({ name, points }) {
     return (
         <div className="Navbar">
             <div className="navbarContainer">
-                <Link to="/">
+                <Link to="/store-calvo-alejandro/">
                     <img className="logo" src={logo} alt="kite" />
                 </Link>
                 <div className="userContent">
-                    <Link to="/user" style={{ textDecoration: 'none' }}>
+                    <Link to="/store-calvo-alejandro/user" style={{ textDecoration: 'none' }}>
                         <p className="userText">{name}</p>
                     </Link>
-                    <Link to="/coins" style={{ textDecoration: 'none' }}>
+                    <Link to="/store-calvo-alejandro/coins" style={{ textDecoration: 'none' }}>
                         <div className="coinContent">
                             <p className="coinText">{points}</p>
                             <div className="coin">

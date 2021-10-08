@@ -41,7 +41,7 @@ div.line2 {
   background: #d9d9d9;
 }
 
-button.recent,
+select.select,
 button.lowest,
 button.highest {
   width: 178px;
@@ -52,13 +52,14 @@ button.highest {
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
+  text-align: center;
   line-height: 48px;
   letter-spacing: -0.15px;
   color: #a3a3a3;
   margin-right: 24px;
 }
 
-button.recent {
+select.select {
   margin-left: 24px;
 }
 
