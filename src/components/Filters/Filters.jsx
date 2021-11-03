@@ -50,7 +50,6 @@ export default function Filters({ filterButtons, setFilterButtons, filter, setFi
                     <option value="Audio">Audio</option>
                     <option value="Tablets & E-readers">Tablets & E-readers</option>
                     <option value="Laptops">Laptops</option>
-                    <option value="Phone Accesories">Phone Accessories</option>
                     <option value="Cameras">Cameras</option>
                     <option value="PC Accessories">PC Accessories</option>
                     <option value="Monitors & TV">Monitors & TV</option>
