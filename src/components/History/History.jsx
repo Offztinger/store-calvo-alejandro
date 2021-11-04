@@ -1,16 +1,12 @@
+import React from 'react';
 import "./History.css"
 import userImg from "../../assets/icons/user.svg"
 import useUser from "../../hooks/useUser";
-import useHistory from "../../hooks/useHistory";
-import { useEffect } from "react";
+import { UserContext } from "../../context/UserContext";
 
 export default function History() {
     const { user } = useUser();
-    const { history, fetchHistory } = useHistory();
-
-    useEffect(() => {
-        fetchHistory()
-    }, [])
+    const { history } = React.useContext(UserContext);
 
     return (
         <div className="History">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 /**
  * 
  * @param {*} data Información a mostrar.
@@ -18,13 +18,21 @@ function usePagination(itemsPerPage) {
     },
   ]);
 
+  const [currentData, setCurrentData] = useState([]);
+  const [totalElements, setTotalElements] = useState(0);
+
   useEffect(() => {
     if(data.length){
       setMaxPage(Math.ceil(data.length / itemsPerPage));
+      changeData();
     }
   }, [data])
 
-  function currentData() {
+  useEffect(() => {
+    changeData()
+  }, [filterButtons, filter, currentPage])
+
+  function changeData() {
     let filterProducts = data.slice();
     const begin = (currentPage - 1) * itemsPerPage;
     const end = begin + itemsPerPage;
@@ -63,8 +71,8 @@ function usePagination(itemsPerPage) {
       })
     }
 
-    const lenFilterProducts = filterProducts.length;
-    return [filterProducts.slice(begin, end), lenFilterProducts];
+    setTotalElements(filterProducts.length);
+    setCurrentData(filterProducts.slice(begin, end))
   }
 
   function next() {
@@ -92,7 +100,9 @@ function usePagination(itemsPerPage) {
     filterButtons,
     setFilterButtons,
     filter,
-    setFilter
+    setFilter,
+    totalElements,
+    changeData
   };
 }
 

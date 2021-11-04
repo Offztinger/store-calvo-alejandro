@@ -1,6 +1,6 @@
 import "./Filters.css"
 
-export default function Filters({ filterButtons, setFilterButtons, filter, setFilter, currentElements, totalElements }) {
+export default function Filters({ filterButtons, setFilterButtons, filter, setFilter, currentElements, totalElements, changeData, currentPage }) {
 
     const onChangeFilter = (event) => {
         console.log(event.target.value)
@@ -8,7 +8,7 @@ export default function Filters({ filterButtons, setFilterButtons, filter, setFi
     }
 
     const clickLowest = () => {
-        if (filterButtons[0].state2 == true) {
+        if (filterButtons[0].state2 === true) {
             setFilterButtons([{
                 state1: !filterButtons[0].state1,
                 state2: !filterButtons[0].state2,
@@ -19,10 +19,9 @@ export default function Filters({ filterButtons, setFilterButtons, filter, setFi
                 state2: filterButtons[0].state2,
             }])
         }
-
     }
     const clickHighest = () => {
-        if (filterButtons[0].state1 == true) {
+        if (filterButtons[0].state1 === true) {
             setFilterButtons([{
                 state1: !filterButtons[0].state1,
                 state2: !filterButtons[0].state2,
@@ -33,6 +32,7 @@ export default function Filters({ filterButtons, setFilterButtons, filter, setFi
                 state2: !filterButtons[0].state2,
             }])
         }
+        changeData()
     }
     /**
      * Retorna el código HTML correspondiente al componente filtros, que gestiona lo que muestra en el componente Resultados.
@@ -40,7 +40,7 @@ export default function Filters({ filterButtons, setFilterButtons, filter, setFi
     return (
         <div className="Filters">
             <div className="filtersContainer">
-                <p className="textFilters1">{currentElements} of {totalElements} products</p>
+                <p className="textFilters1">{(currentPage > 1) ? (((currentPage - 1) * 16)+currentElements) : currentElements} of {totalElements} products</p>
                 <div className="line1"></div>
                 <p className="textFilters2">Sort by: </p>
                 <select value={filter} onChange={onChangeFilter} name="" id="" className="select">

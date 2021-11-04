@@ -1,9 +1,7 @@
 import "./App.css";
-import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import useUser from "./hooks/useUser";
 import useProducts from "./hooks/useProducts";
-import usePagination from "./hooks/usePagination";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Filters from "./components/Filters/Filters";
@@ -13,22 +11,21 @@ import History from "./components/History/History";
 
 export default function App() {
 
-  const { fetchUser, user } = useUser();
+  const { user } = useUser();
 
   const { 
-    fetchProducts, 
-    currentData: products, 
-    data, 
     filterButtons,
     setFilterButtons,
     filter,
-    setFilter
+    setFilter,
+    currentData,
+    totalElements,
+    changeData,
+    currentPage,
+    maxPage,
+    next,
+    prev
   } = useProducts();
-
-  useEffect(() => {
-    fetchProducts();
-    fetchUser();
-  }, []);
 
   return (
     <div className="App">
@@ -48,12 +45,18 @@ export default function App() {
               setFilterButtons={setFilterButtons}
               filter={filter}
               setFilter={setFilter}
-              totalElements={products()[1]}
-              currentElements={products()[0].length}
+              totalElements={totalElements}
+              currentElements={currentData.length}
+              changeData={changeData}
+              currentPage={currentPage}
             />
             <Results
               points={user.points}
-              products={products()[0]}
+              currentPage={currentPage}
+              products={currentData}
+              maxPage={maxPage}
+              next={next}
+              prev={prev}
             />
           </Route>
         </Switch>

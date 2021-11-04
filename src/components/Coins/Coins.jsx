@@ -9,7 +9,7 @@ export default function Coins() {
 
     const handleClick = async(userPoints) => {
         try {
-            let request = await fetch(
+            await fetch(
                 "https://coding-challenge-api.aerolab.co/user/points",
                 {
                     method: "POST",
@@ -22,7 +22,7 @@ export default function Coins() {
                     },
                 }
             );
-            let res = await request.json();
+            // let res = await request.json();
             boostCoins(userPoints)
         } catch (error) {
             console.error(error);

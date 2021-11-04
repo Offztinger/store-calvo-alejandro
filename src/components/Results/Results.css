@@ -11,3 +11,24 @@ div.resultsContainer {
   width: 100vw;
   margin-top: 42px;
 }
+
+.arrowContainer {
+  align-items: center;
+  color:#0ad4fa;
+  display:flex;
+  justify-content: center;
+  width:100%;
+}
+
+.arrowContainer i.unabled {
+  visibility: hidden;
+}
+
+.arrowContainer i, .arrowContainer div {
+  cursor:pointer;
+  margin:0 1rem;
+}
+
+.arrowContainer i:hover, .arrowContainer div:hover {
+  cursor:pointer;
+}
