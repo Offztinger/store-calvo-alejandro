@@ -1,6 +1,6 @@
 import "./Filters.css"
 
-export default function Filters({ filterButtons, setFilterButtons, filter, setFilter }) {
+export default function Filters({ filterButtons, setFilterButtons, filter, setFilter, currentElements, totalElements }) {
 
     const onChangeFilter = (event) => {
         console.log(event.target.value)
@@ -35,12 +35,12 @@ export default function Filters({ filterButtons, setFilterButtons, filter, setFi
         }
     }
     /**
-     * Retrona el código HTML correspondiente al componente filtros, que gestiona lo que muestra en el componente Resultados.
+     * Retorna el código HTML correspondiente al componente filtros, que gestiona lo que muestra en el componente Resultados.
      */
     return (
         <div className="Filters">
             <div className="filtersContainer">
-                <p className="textFilters1">X of X products</p>
+                <p className="textFilters1">{currentElements} of {totalElements} products</p>
                 <div className="line1"></div>
                 <p className="textFilters2">Sort by: </p>
                 <select value={filter} onChange={onChangeFilter} name="" id="" className="select">
