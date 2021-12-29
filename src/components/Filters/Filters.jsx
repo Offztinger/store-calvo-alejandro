@@ -1,12 +1,12 @@
 import "./Filters.css"
-
+//Manejo de filtros del aplicativo
 export default function Filters({ filterButtons, setFilterButtons, filter, setFilter, currentElements, totalElements, changeData, currentPage }) {
-
+    //Cambio de filtro, esto lo puedes quitar ya que solo vendes audifonos y no parlantes
     const onChangeFilter = (event) => {
         console.log(event.target.value)
         setFilter(event.target.value)
     }
-
+    //Filtrado de LowestPrice
     const clickLowest = () => {
         if (filterButtons[0].state2 === true) {
             setFilterButtons([{
@@ -20,6 +20,7 @@ export default function Filters({ filterButtons, setFilterButtons, filter, setFi
             }])
         }
     }
+    //Filtrado de HighestPrice
     const clickHighest = () => {
         if (filterButtons[0].state1 === true) {
             setFilterButtons([{
@@ -40,7 +41,7 @@ export default function Filters({ filterButtons, setFilterButtons, filter, setFi
     return (
         <div className="Filters">
             <div className="filtersContainer">
-                <p className="textFilters1">{(currentPage > 1) ? (((currentPage - 1) * 16)+currentElements) : currentElements} of {totalElements} products</p>
+                <p className="textFilters1">{(currentPage > 1) ? (((currentPage - 1) * 16) + currentElements) : currentElements} of {totalElements} products</p>
                 <div className="line1"></div>
                 <p className="textFilters2">Sort by: </p>
                 <select value={filter} onChange={onChangeFilter} name="" id="" className="select">

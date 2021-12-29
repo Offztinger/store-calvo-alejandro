@@ -5,11 +5,11 @@ import coin from "../../../assets/icons/coin.svg"
 import token from "../../../constants/token"
 import useUser from '../../../hooks/useUser'
 
-
+//Este es la forma para comprar un producto en el aplicativo
 export default function Product({ id, img, category, productName, price, points }) {
 
     const { restCoints } = useUser();
-
+    //Maneja la compra desde el botón comprar solo en el caso en el qué el usuario tenga la cantidad de monedas correspondientes para la compra
     const handleClick = () => {
         if (price < points) {
             fetch("https://coding-challenge-api.aerolab.co/redeem", {
@@ -28,7 +28,7 @@ export default function Product({ id, img, category, productName, price, points 
             alert("Uh oh, ha ocurrido un error...")
         }
     }
-
+    //HTML del componente
     return (
         <div className="Product">
             <div className="productContainer">

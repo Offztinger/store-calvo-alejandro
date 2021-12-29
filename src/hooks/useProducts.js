@@ -1,15 +1,19 @@
 import React, { useContext } from "react";
 import token from "../constants/token";
+//Import del contexto para uso de variables globales del aplicativo
 import { ProductsContext } from "../context/ProductsContext";
+//Llamado del hook usePagination para separar items en caso tal de tener más de 16 productos
 import usePagination from "./usePagination";
 
 export default function useProducts() {
-  
+  //Destructuring del contexto para uso de sus variables locales
   const { products, setProducts } = useContext(ProductsContext);
+  //Desarrollo del header para autorización en la API
   let header = { headers: { Authorization: `Bearer ${token}` } };
-  const { 
-    setData, 
-    currentData, 
+  //Destructuring de usePagination
+  const {
+    setData,
+    currentData,
     data,
     filterButtons,
     setFilterButtons,
@@ -20,9 +24,10 @@ export default function useProducts() {
     currentPage,
     maxPage,
     next,
-    prev
+    prev,
   } = usePagination(16);
-
+  //Uso de useEffect() para hacer el respectivo async await del fetch y el retorno de los productos en la API
+  //Al usar una APIFake puedes eliminar el fetch y asumir que solo se está instanciando un setData con la información de un JSON.
   React.useEffect(() => {
     async function fetchProducts() {
       try {
@@ -37,12 +42,12 @@ export default function useProducts() {
         console.error(error);
       }
     }
-    fetchProducts()
-  }, [])
-
-  return { 
-    products, 
-    currentData, 
+    fetchProducts();
+  }, []);
+  //Retorno de variables para el uso exterior del hook
+  return {
+    products,
+    currentData,
     data,
     filterButtons,
     setFilterButtons,
@@ -54,6 +59,6 @@ export default function useProducts() {
     currentPage,
     maxPage,
     prev,
-    next
+    next,
   };
 }

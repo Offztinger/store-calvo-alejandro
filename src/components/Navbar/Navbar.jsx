@@ -2,7 +2,7 @@ import "./Navbar.css"
 import { Link } from "react-router-dom"
 import logo from "../../assets/aerolab-logo.svg"
 import coin from "../../assets/icons/coin.svg"
-
+//Navbar del aplicativo que muestra el nombre que está en la API y su cantidad de monedas
 export default function Navbar({ name, points }) {
     return (
         <div className="Navbar">

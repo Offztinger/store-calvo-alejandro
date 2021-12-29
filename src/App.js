@@ -1,7 +1,10 @@
 import "./App.css";
+//Imports de BrowserRouter para navegación en la página
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//Imports de hooks para desarrollo de la API Real
 import useUser from "./hooks/useUser";
 import useProducts from "./hooks/useProducts";
+//Imports de componentes de la aplicación
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Filters from "./components/Filters/Filters";
@@ -10,9 +13,9 @@ import Coins from "./components/Coins/Coins";
 import History from "./components/History/History";
 
 export default function App() {
-
+//Destructuring de Hook useUser, es decir, funciones o variables relevantes del aplicativo.
   const { user } = useUser();
-
+//Destructuring de Hook useProducts es decir, funciones o variables relevantes del aplicativo.
   const { 
     filterButtons,
     setFilterButtons,
@@ -26,10 +29,11 @@ export default function App() {
     next,
     prev
   } = useProducts();
-
+//HTML de la página
   return (
     <div className="App">
       <Router>
+         {/*Llamado del navbar filters y sus props*/}
         <Navbar name={user.name} points={user.points} />
         <Header />
         <Switch>
@@ -40,6 +44,7 @@ export default function App() {
             <Coins />
           </Route>
           <Route path="/store-calvo-alejandro/">
+            {/*Llamado del componente filters y sus props*/}
             <Filters
               filterButtons={filterButtons}
               setFilterButtons={setFilterButtons}
@@ -50,6 +55,7 @@ export default function App() {
               changeData={changeData}
               currentPage={currentPage}
             />
+             {/*Llamado del componente Results y sus props*/}
             <Results
               points={user.points}
               currentPage={currentPage}

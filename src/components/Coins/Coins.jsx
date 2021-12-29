@@ -4,10 +4,12 @@ import useUser from "../../hooks/useUser";
 import token from "../../constants/token";
 
 export default function Coins() {
-
+    //Llamado de la función boostCoins del Hook useUser()
     const { boostCoins } = useUser();
-
-    const handleClick = async(userPoints) => {
+    //Manejo de evento para aumento de monedas, es un metodo POST
+    //Al usar una APIFake puedes cambiar el try catch por otro metodo para aumento de monedas en tú página
+    //Al no tener conexión en una API puedes definir una cantidad estandar
+    const handleClick = async (userPoints) => {
         try {
             await fetch(
                 "https://coding-challenge-api.aerolab.co/user/points",
@@ -28,7 +30,7 @@ export default function Coins() {
             console.error(error);
         }
     }
-
+    //HTML de /coins
     return (
         <div className="Coins">
             <div className="coinsContainer">
